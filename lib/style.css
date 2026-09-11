@@ -39,8 +39,20 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--sub);fon
 .topbar a:hover{color:var(--ink)}
 .topbar b{font-weight:600;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .reader{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding-top:40px;padding-bottom:80px}
-.toc{position:sticky;top:24px;align-self:start;font-size:15px}
-.toc h2{font-size:14px;color:var(--sub);font-weight:600;margin:0 0 10px}
+.toc{position:sticky;top:24px;align-self:start;font-size:15px;max-height:calc(100vh - 48px);overflow-y:auto;padding-right:8px}
+.toc summary{font-size:14px;color:var(--sub);font-weight:600;margin:0 0 12px;cursor:pointer;list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::after{content:" ▾";font-size:12px}
+.toc details:not([open]) summary::after{content:" ▸"}
+.toc .sections{list-style:none;margin:10px 0 4px;padding:0 0 0 0;border-left:1px solid var(--line)}
+.toc .sections li{margin:0}
+.toc .sections a{display:block;padding:5px 0 5px 14px;margin-left:-1px;border-left:2px solid transparent;font-size:14px;line-height:1.45;word-break:keep-all}
+.toc .sections li.sub a{padding-left:28px;font-size:13px}
+.toc .sections a:hover{color:var(--ink)}
+.toc .sections a.on{color:var(--ink);border-left-color:var(--ink);font-weight:600}
+article h2,article h3{scroll-margin-top:24px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .toc ol{margin:0;padding:0 0 0 20px}
 .toc li{margin:0 0 8px}
 .toc a{text-decoration:none;color:var(--sub)}
@@ -72,7 +84,9 @@ article pre code{background:none;padding:0}
   .cover{padding:14px 12px 12px 20px}
   .cover h2{font-size:16px}
   .reader{grid-template-columns:1fr;gap:24px;padding-top:24px}
-  .toc{position:static;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .toc{position:static;max-height:none;overflow:visible;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .toc summary{margin:0;padding:6px 0;font-size:15px;color:var(--ink)}
+  .toc details[open] summary{margin-bottom:10px}
   article{font-size:17px}
   article h1{font-size:26px}
 }
