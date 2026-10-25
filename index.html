@@ -1,28 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap">
-<link rel="stylesheet" href="lib/style.css">
-<title>서재</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>브라이트 영어학원 | 말하는 영어, 오래가는 실력</title>
+  <meta name="description" content="유아 파닉스부터 초등·중등 내신, 성인 회화까지. 원어민·한국인 강사 협업 수업과 1:1 피드백으로 실력을 키우는 브라이트 영어학원." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<div class="wrap">
-  <header class="masthead">
-    <h1 id="site-name">서재</h1>
-    <p id="site-intro"></p>
-    <p class="count" id="count"></p>
-  </header>
+  <header class="header" data-header></header>
+
   <main>
-    <ul class="shelf" id="shelf" aria-label="책 목록"></ul>
-    <div class="notice" id="notice" hidden><strong></strong><span></span></div>
+    <!-- 히어로 -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="hero__badge"><i></i> 2027년 겨울방학 특강 모집 중</span>
+          <h1 class="hero__title">외우는 영어 말고,<br /><em>말하는 영어</em>를<br />시작하세요</h1>
+          <p class="hero__desc">원어민·한국인 강사가 함께 설계한 단계별 커리큘럼과 매주 1:1 피드백으로, 아이의 영어가 ‘시험 점수’에서 ‘자신감’이 됩니다.</p>
+          <div class="hero__actions">
+            <a href="#level-test" class="btn btn--primary">무료 레벨테스트 →</a>
+            <a href="contact.html" class="btn btn--ghost">방문 상담 예약</a>
+          </div>
+          <div class="hero__trust">
+            <div class="avatars" aria-hidden="true">
+              <span style="background:#2b4de0">J</span>
+              <span style="background:#ff8a3d">S</span>
+              <span style="background:#1f9d6b">M</span>
+              <span style="background:#8b5cf6">K</span>
+            </div>
+            <span><strong>재원생 만족도 4.9 / 5.0</strong> · 학부모 후기 1,200건+</span>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="chat-card chat-card--main">
+            <div class="card-label" style="margin-bottom:16px">SPEAKING CLASS · LIVE</div>
+            <div class="chat-row">
+              <span class="mini-avatar">T</span>
+              <span class="bubble">What did you do last weekend?</span>
+            </div>
+            <div class="chat-row chat-row--me">
+              <span class="bubble">I went camping with my family!</span>
+            </div>
+            <div class="chat-row">
+              <span class="mini-avatar">T</span>
+              <span class="bubble">Wow, great sentence! 🎉</span>
+            </div>
+          </div>
+          <div class="chat-card chat-card--tip">
+            <div class="card-label">TODAY'S WORD</div>
+            <strong style="font-size:20px">confident</strong>
+            <div style="color:var(--ink-2);font-size:14px">자신감 있는</div>
+          </div>
+          <div class="chat-card chat-card--score">
+            <div class="card-label">SPEAKING SCORE</div>
+            <div class="score-num">86<small style="font-size:16px;color:var(--ink-3)"> /100</small></div>
+            <div class="score-bar"><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 통계 -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat"><div class="stat__num" data-count="15" data-suffix="년">0</div><div class="stat__label">교육 운영</div></div>
+          <div class="stat"><div class="stat__num" data-count="3200" data-suffix="+">0</div><div class="stat__label">누적 수강생</div></div>
+          <div class="stat"><div class="stat__num" data-count="96" data-suffix="%">0</div><div class="stat__label">재등록률</div></div>
+          <div class="stat"><div class="stat__num" data-count="8" data-suffix="명">0</div><div class="stat__label">반당 최대 정원</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 프로그램 미리보기 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Programs</span>
+          <h2 class="section-title">연령과 목표에 꼭 맞는 프로그램</h2>
+          <p class="section-desc">레벨테스트 결과를 바탕으로 가장 알맞은 반에 배정해 드려요.</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <div class="card__icon tone-orange" aria-hidden="true">🧸</div>
+            <h3 class="card__title">유아 파닉스</h3>
+            <div class="card__meta">5 – 7세</div>
+            <p class="card__text">노래·놀이·스토리북으로 소리와 글자를 자연스럽게 익혀요.</p>
+            <a href="programs.html#kids" class="card__link">자세히 보기 →</a>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon tone-blue" aria-hidden="true">📚</div>
+            <h3 class="card__title">초등 영어</h3>
+            <div class="card__meta">초1 – 초6</div>
+            <p class="card__text">리딩·라이팅·스피킹을 균형 있게, 원서 읽기 습관까지.</p>
+            <a href="programs.html#elementary" class="card__link">자세히 보기 →</a>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon tone-green" aria-hidden="true">🎯</div>
+            <h3 class="card__title">중등 내신·수능</h3>
+            <div class="card__meta">중1 – 고1</div>
+            <p class="card__text">학교별 내신 분석과 서술형 첨삭, 수능 독해 기초를 다져요.</p>
+            <a href="programs.html#middle" class="card__link">자세히 보기 →</a>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon tone-purple" aria-hidden="true">💬</div>
+            <h3 class="card__title">성인 회화</h3>
+            <div class="card__meta">직장인 · 대학생</div>
+            <p class="card__text">비즈니스 이메일부터 프리토킹까지, 퇴근 후 소수정예로.</p>
+            <a href="programs.html#adult" class="card__link">자세히 보기 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 차별점 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Bright</span>
+          <h2 class="section-title">브라이트가 다른 이유</h2>
+        </div>
+        <div class="grid grid--2" style="gap:40px 56px">
+          <div class="feature reveal">
+            <span class="feature__num">01</span>
+            <div>
+              <h3>원어민 × 한국인 코티칭</h3>
+              <p>원어민은 발화와 표현을, 한국인 선생님은 문법과 이해를 맡아 한 수업 안에서 빈틈없이 채워요.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__num">02</span>
+            <div>
+              <h3>최대 8명 소수정예</h3>
+              <p>모든 학생이 한 수업에 최소 10번 이상 말할 수 있도록 반 정원을 엄격하게 지켜요.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__num">03</span>
+            <div>
+              <h3>매주 스피킹 리포트</h3>
+              <p>녹음 과제에 대한 발음·유창성 피드백을 학부모님께 매주 리포트로 보내 드려요.</p>
+            </div>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__num">04</span>
+            <div>
+              <h3>분기별 레벨 점검</h3>
+              <p>3개월마다 정기 평가로 성장 곡선을 확인하고, 반 이동과 학습 계획을 함께 조정해요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 레벨테스트 -->
+    <section class="section" id="level-test">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Free Level Test</span>
+          <h2 class="section-title">1분 미니 레벨테스트</h2>
+          <p class="section-desc">8문항으로 지금 실력을 가볍게 확인해 보세요. 결과에 맞는 프로그램을 추천해 드려요.</p>
+        </div>
+        <div class="quiz reveal" data-quiz aria-live="polite">
+          <div class="quiz__result">
+            <div style="font-size:56px" aria-hidden="true">📝</div>
+            <h3 class="quiz__q" style="margin-top:12px">준비되셨나요?</h3>
+            <p>문법·어휘 8문항 · 초등 기초부터 고등 수준까지 단계적으로 어려워져요.</p>
+            <button type="button" class="btn btn--primary" data-quiz-start>테스트 시작하기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 후기 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Reviews</span>
+          <h2 class="section-title">학부모·수강생 이야기</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card review reveal">
+            <div class="review__stars" aria-label="별점 5점">★★★★★</div>
+            <p class="review__text">“영어 학원은 싫다던 아이가 원어민 선생님 수업 날만 기다려요. 6개월 만에 먼저 영어로 말을 거는 모습에 깜짝 놀랐습니다.”</p>
+            <div class="review__who">
+              <span class="mini-avatar" style="background:#ff8a3d">김</span>
+              <div><strong>김○○ 학부모</strong><span>초등 3학년 · 1년 수강</span></div>
+            </div>
+          </article>
+          <article class="card review reveal">
+            <div class="review__stars" aria-label="별점 5점">★★★★★</div>
+            <p class="review__text">“학교별 기출 분석이 정말 꼼꼼해요. 서술형 첨삭 덕분에 2학기 영어 내신이 2등급에서 1등급으로 올랐어요.”</p>
+            <div class="review__who">
+              <span class="mini-avatar" style="background:#2b4de0">이</span>
+              <div><strong>이○○ 학생</strong><span>중학교 2학년 · 8개월 수강</span></div>
+            </div>
+          </article>
+          <article class="card review reveal">
+            <div class="review__stars" aria-label="별점 5점">★★★★★</div>
+            <p class="review__text">“퇴근 후 저녁반이라 부담이 없고, 실제 업무 메일 표현을 바로 써먹을 수 있어서 만족합니다. 해외 미팅이 덜 두려워졌어요.”</p>
+            <div class="review__who">
+              <span class="mini-avatar" style="background:#1f9d6b">박</span>
+              <div><strong>박○○ 님</strong><span>직장인 · 성인 비즈니스반</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>첫 상담은 무료예요</h2>
+            <p>원어민 1:1 스피킹 테스트 + 맞춤 학습 플랜까지, 약 40분이면 충분해요.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="contact.html" class="btn btn--white">상담 신청하기</a>
+            <a href="tel:02-1234-5678" class="btn btn--accent">☎ 전화 문의</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><span id="foot-name"></span>의 글은 허락 없이 복제하거나 배포할 수 없습니다.</footer>
-</div>
-<script src="lib/shelf.js"></script>
+
+  <footer class="footer" data-footer></footer>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/level-test.js"></script>
 </body>
 </html>

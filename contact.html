@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>상담·오시는 길 | 브라이트 영어학원</title>
+  <meta name="description" content="브라이트 영어학원 무료 상담 및 레벨테스트 예약, 오시는 길, 자주 묻는 질문." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header" data-header></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">홈</a> / 상담·오시는 길</div>
+        <h1>무료 상담 · 레벨테스트 예약</h1>
+        <p>신청을 남겨 주시면 영업일 기준 24시간 안에 담임 선생님이 연락드려요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <form class="form" data-contact-form novalidate>
+            <h2>상담 신청서</h2>
+            <p>표시(<b style="color:var(--danger)">*</b>)된 항목은 꼭 입력해 주세요.</p>
+            <p class="tag" data-level-note hidden style="margin:-12px 0 22px"></p>
+            <input type="hidden" name="level" />
+
+            <div class="form-row">
+              <div class="field" data-field="name">
+                <label for="f-name">이름 <b>*</b></label>
+                <input id="f-name" name="name" type="text" maxlength="20" autocomplete="name" placeholder="학생 또는 학부모 성함" />
+                <p class="field__error" role="alert"></p>
+              </div>
+              <div class="field" data-field="phone">
+                <label for="f-phone">연락처 <b>*</b></label>
+                <input id="f-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" />
+                <p class="field__error" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field" data-field="target">
+              <label for="f-target">수강 대상 <b>*</b></label>
+              <select id="f-target" name="target">
+                <option value="">선택해 주세요</option>
+                <option>유아 (5–7세)</option>
+                <option>초등 저학년 (1–3학년)</option>
+                <option>초등 고학년 (4–6학년)</option>
+                <option>중학생</option>
+                <option>고등학생</option>
+                <option>대학생 · 성인</option>
+              </select>
+              <p class="field__error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <span style="display:block;font-weight:700;font-size:14px;margin-bottom:8px">관심 과정</span>
+              <div class="chip-group">
+                <input type="radio" id="c1" name="course" value="파닉스" /><label for="c1">파닉스</label>
+                <input type="radio" id="c2" name="course" value="리딩·라이팅" /><label for="c2">리딩·라이팅</label>
+                <input type="radio" id="c3" name="course" value="내신·수능" /><label for="c3">내신·수능</label>
+                <input type="radio" id="c4" name="course" value="회화" /><label for="c4">회화</label>
+                <input type="radio" id="c5" name="course" value="아직 모르겠어요" checked /><label for="c5">아직 모르겠어요</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-time">희망 상담 시간</label>
+              <select id="f-time" name="time">
+                <option>언제든 괜찮아요</option>
+                <option>평일 오후 (13–17시)</option>
+                <option>평일 저녁 (17–21시)</option>
+                <option>토요일 (10–17시)</option>
+              </select>
+            </div>
+
+            <div class="field" data-field="message">
+              <label for="f-msg">문의 내용</label>
+              <textarea id="f-msg" name="message" maxlength="500" placeholder="현재 학습 상황이나 궁금한 점을 자유롭게 적어 주세요."></textarea>
+              <p class="field__error" role="alert"></p>
+            </div>
+
+            <div class="field" data-field="agree" style="margin-bottom:0">
+              <label class="agree" style="font-weight:400">
+                <input type="checkbox" name="agree" />
+                <span>[필수] 상담 목적의 개인정보(이름·연락처) 수집·이용에 동의합니다. 수집된 정보는 상담 완료 후 6개월 이내 파기됩니다.</span>
+              </label>
+              <p class="field__error" role="alert" style="margin:-16px 0 16px"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">상담 신청하기</button>
+          </form>
+
+          <div class="form form-success" data-form-success aria-live="polite">
+            <div class="form-success__icon" aria-hidden="true">✓</div>
+            <h3><span data-success-name></span>님, 신청이 완료됐어요!</h3>
+            <p>영업일 기준 24시간 안에 담임 선생님이 연락드릴게요.<br />급하신 경우 <a href="tel:02-1234-5678" style="color:var(--primary);font-weight:700" data-academy="phone">02-1234-5678</a>로 전화 주세요.</p>
+            <button type="button" class="btn btn--ghost" data-form-again>새 신청서 작성</button>
+          </div>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h3>📍 오시는 길</h3>
+            <ul class="side-list">
+              <li><strong>주소</strong><span data-academy="address">서울시 ○○구 ○○로 123</span></li>
+              <li><strong>대중교통</strong><span>○○역 2번 출구 도보 3분</span></li>
+              <li><strong>주차</strong><span>건물 내 지하 주차 1시간 무료</span></li>
+            </ul>
+            <div class="map" role="img" aria-label="학원 위치 약도">
+              <span class="map__pin">브라이트 영어학원</span>
+            </div>
+          </div>
+          <div class="side-card">
+            <h3>🕘 상담 가능 시간</h3>
+            <ul class="side-list">
+              <li><strong>평일</strong><span>13:00 – 22:00</span></li>
+              <li><strong>토요일</strong><span>10:00 – 18:00</span></li>
+              <li><strong>일·공휴일</strong><span>휴무</span></li>
+            </ul>
+          </div>
+          <a href="tel:02-1234-5678" class="btn btn--accent btn--block">☎ <span data-academy="phone">02-1234-5678</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">자주 묻는 질문</h2>
+        </div>
+        <div class="faq">
+          <div class="faq__item">
+            <button class="faq__q" type="button">레벨테스트는 어떻게 진행되나요?</button>
+            <div class="faq__a"><p>필기(문법·어휘·독해) 20분과 원어민 1:1 스피킹 인터뷰 10분으로 진행돼요. 이후 담임 선생님이 결과를 설명드리고 반을 추천해 드립니다. 비용은 무료예요.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button">수업 중간에 들어갈 수도 있나요?</button>
+            <div class="faq__a"><p>네, 정원에 여유가 있는 반이라면 언제든 합류할 수 있어요. 첫 2주간은 담임 선생님이 진도 차이를 보충해 드려요.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button">결석하면 보강이 되나요?</button>
+            <div class="faq__a"><p>사전에 알려 주시면 월 1회 보강 수업을 잡아 드려요. 성인반은 수업 녹화본도 함께 제공합니다.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button">차량 운행을 하나요?</button>
+            <div class="faq__a"><p>유아·초등 저학년반은 학원 반경 2km 이내 차량 운행을 해요. 노선은 상담 시 안내해 드립니다.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button">수강료 환불 규정이 궁금해요.</button>
+            <div class="faq__a"><p>「학원의 설립·운영 및 과외교습에 관한 법률」의 교습비 반환 기준에 따라 환불해 드려요. 자세한 기준은 학원에 게시되어 있으며 상담 시에도 안내해 드립니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-footer></footer>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact-form.js"></script>
+</body>
+</html>
